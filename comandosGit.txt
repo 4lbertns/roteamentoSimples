@@ -4,3 +4,5 @@ git branch -M main
 git add . or git app -A
 git commit -m 'feat: teste'
 git push -u origin main
+
+git reset 'nome do ultimo arq. que nao devia ser adicionado ao pré-repositório'
