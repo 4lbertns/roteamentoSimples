@@ -20,7 +20,7 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/home/input', (req,res) => {
-    res.send(`Entre no link: <a href='http://localhost:3000/home/form/:Albert/:20'>Albert/20</a>`)
+    res.send(`Entre no link: <a href='http://localhost:3000/home/form/Albert/20'>Albert/20</a>`)
 });
 
 app.get('/home/form/:nome/:idade', (req,res) => {
