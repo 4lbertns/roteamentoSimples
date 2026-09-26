@@ -1,0 +1,51 @@
+criar função e exportar o módulo todo:
+
+function a(x) {
+	return `${x}`
+};
+
+module.exports = a;
+
+------------------------------
+
+const a = require('./arq.js')
+
+console.log(a(1));
+
+------------------------------------------------------------
+
+criar funções e exportá-las como objeto:
+
+function a() {
+	return"";
+}
+
+function b() {
+	return ""
+};
+
+module.exports = {
+	a,
+	b	
+};
+
+------------------------------
+
+const {a, b} = require('./arq.js');
+
+console.log(a());
+console.log(b());
+
+------------------------------------------------------------
+
+exportação direta e única (NÃO MAIS EXPORTAÇÃO DE MÓDULO/CONJUNTO DE CÓDIGO):
+
+-module.-exports.a = () => {
+	return 'A'
+};
+
+------------------------------
+
+const a = require('./arq.js');
+
+console.log(a());
