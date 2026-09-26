@@ -66,7 +66,7 @@ console.log(a(15));
 
 ------------------------------------------------------------------------------------------------------------------------
 
-const nome = (a) => { return ´Seu nome é: ${a}` };
+const nome = (a) => { return `Seu nome é: ${a}` };
 const idade = (a) => { return `Sua idade é: ${a}` };
 
 module.exports = {

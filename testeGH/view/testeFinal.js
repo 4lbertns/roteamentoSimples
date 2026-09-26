@@ -1,0 +1,48 @@
+const exoress = require('express');
+const app = express();
+
+app.get('/', (req, res) => res.send('Tela Inicial'));
+app.get('/home', (req, res) => res.send('Tela Home'));
+app.get('/sobrenos', (req, res) => res.send('Tela Sobre Nós'));
+
+app.listen(3000, () => console.log('Rodando na porta 3000.'));
+
+-----------------------------------------------------------------
+
+const express = require('express');
+const app = express();
+
+const path = require('path');
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + './arq.js')));
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname + './arq.js'));
+});
+
+app.get('/home/input', (req,res) => {
+    res.send(`Entre no link: <a href='http://localhost:3000/home/form/:Albert/:20'>Albert/20</a>`)
+});
+
+app.get('/home/form/:nome/:idade', (req,res) => {
+    let nome = req.params.nome;
+    let idade = req.params.idade;
+    
+    res.send(`Seu nome é: ${nome} e sua idade é: ${idade}.`);
+});
+
+app.listen(3000, () => {
+    console.log('na porta 3000.');
+});
+
+-----------------------------------------------------------------
+let valor = req.params.urlValor;
+let numero = req.params.urlNumero;
+let idade = req.params.urlIdade;
+let nomeCompleto = req.params.urlNomeCompleto;
+
+let medida = req.params.urlMedida;
+let altura= req.params.urlAltura;
+let largura = req.params.urlLargura;
+
+-----------------------------------------------------------------
+

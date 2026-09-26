@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Códigos usados:</h1> <br />
+    <code> 
+        const exoress = require('express'); <br>
+        const app = express(); <br>
+        <br>
+        app.get('/', (req, res) => res.send('Tela Inicial'"")); <br>
+        app.get('/home', (req, res) => res.send('Tela Home')); <br>
+        app.get('/sobrenos', (req, res) => res.send('Tela Sobre Nós')); <br>
+        <br>
+        app.listen(3000, () => console.log('Rodando na porta 3000.')); <br>
+        <br>
+        ----------------------------------------------------------------- <br>
+        <br>
+        const express = require('express'); <br>
+        const app = express(); <br>
+        <br>
+        const path = require('path'); <br>
+        <br>
+        app.get('/', (req, res) => res.sendFile(path.join(__dirname + './arq.js'))); <br>
+        app.get('/home', (req, res) => { <br>
+            res.sendFile(path.join(__dirname + './arq.js')); <br>
+        }); <br>
+
+        app.get('/home/input', (req,res) => { <br> 
+            res.send(`Entre no link: < a href='http://localhost:3000/home/form/:Albert/:20'>Albert/20</a>`) <br>
+        }); <br>
+        <br>
+        app.get('/home/form/:nome/:idade', (req,res) => { <br>
+            let nome = req.params.nome;<br>
+            let idade = req.params.idade;<br>
+            <br>
+            res.send(`Seu nome é: ${nome} e sua idade é: ${idade}.`);<br>
+        });<br>
+<br>
+        app.listen(3000, () => {<br>
+            console.log('na porta 3000.');<br>
+        });<br>
+<br>
+        -----------------------------------------------------------------<br>
+        <br>
+        let valor = req.params.urlValor;<br>
+        let numero = req.params.urlNumero;<br>
+        let idade = req.params.urlIdade;<br>
+        let nomeCompleto = req.params.urlNomeCompleto;<br>
+<br>
+        let medida = req.params.urlMedida;<br>
+        let altura= req.params.urlAltura;<br>
+        let largura = req.params.urlLargura;<br>
+<br>
+        -----------------------------------------------------------------<br>
+
+</code> <br/>
+    <a href="http://localhost:3000/home"> Voltar</a>
+</body>
+
+</html>
