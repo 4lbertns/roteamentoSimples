@@ -59,10 +59,20 @@ app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname + './arq.js'));
 });
 
-app.get('/home/input', (req,res) => {
-    res.send(`Entre no link: < a href='http://localhost:3000/home/form/:Albert/:20'>Albert/20< /a>`)
-});
+app.get('/input1', (req, res) => {
+    res.send(
+        < form action='/home/input' method='GET'>
+            < input name='nome' type='text' placeholder='Digite seu nome...' required>< /input>
+            < input name='idade' type='number' placeholder='Digite sua idade...' required>< /input>
+            < button type='submit'>Enviar< /button>
+        < /form>)
+})
 
+app.get('/home/input', (req,res) => {
+    let nome = req.query.nome;
+    let idade = req.query.idade;
+    res.send(`Entre no link: < a href='http://localhost:3000/home/form/${nome}/${idade}'>${nome}/${idade}< /a>`)
+});
 app.get('/home/form/:nome/:idade', (req,res) => {
     let nome = req.params.nome;
     let idade = req.params.idade;
