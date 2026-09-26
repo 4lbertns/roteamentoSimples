@@ -40,7 +40,7 @@ console.log(b());
 
 exportação direta e única (NÃO MAIS EXPORTAÇÃO DE MÓDULO/CONJUNTO DE CÓDIGO):
 
--module.-exports.a = () => {
+exports.a = () => {
 	return 'A'
 };
 
@@ -49,3 +49,41 @@ exportação direta e única (NÃO MAIS EXPORTAÇÃO DE MÓDULO/CONJUNTO DE CÓD
 const a = require('./arq.js');
 
 console.log(a());
+
+------------------------------------------------------------------------------------------------------------------------
+
+function a(b) {
+	return 'a';
+}
+
+module.exports = a;
+
+------------------------------------------------------------
+
+const a = require('./arq.js');
+
+console.log(a(15));
+
+------------------------------------------------------------------------------------------------------------------------
+
+const nome = (a) => { return ´Seu nome é: ${a}` };
+const idade = (a) => { return `Sua idade é: ${a}` };
+
+module.exports = {
+	nome,
+	idade
+};
+
+------------------------------------------------------------
+
+const { nome, idade } = requrie('./arq.js');
+
+console.log(`${nome('Albert')} \n ${idade(20)}`);
+
+------------------------------------------------------------------------------------------------------------------------
+
+exports.soma = (a,b) => { return ´O resultado da soma de ${a} + ${b} é igual a: ${ a+b }!´ };
+
+------------------------------------------------------------
+
+const soma = require('./arq.js');
