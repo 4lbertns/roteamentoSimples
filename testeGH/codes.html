@@ -3,62 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Resumo de Códigos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        a {
+            color: #4fc3f7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Códigos usados:</h1> <br />
-    <code> 
-        const exoress = require('express'); <br>
-        const app = express(); <br>
-        <br>
-        app.get('/', (req, res) => res.send('Tela Inicial'"")); <br>
-        app.get('/home', (req, res) => res.send('Tela Home')); <br>
-        app.get('/sobrenos', (req, res) => res.send('Tela Sobre Nós')); <br>
-        <br>
-        app.listen(3000, () => console.log('Rodando na porta 3000.')); <br>
-        <br>
-        ----------------------------------------------------------------- <br>
-        <br>
-        const express = require('express'); <br>
-        const app = express(); <br>
-        <br>
-        const path = require('path'); <br>
-        <br>
-        app.get('/', (req, res) => res.sendFile(path.join(__dirname + './arq.js'))); <br>
-        app.get('/home', (req, res) => { <br>
-            res.sendFile(path.join(__dirname + './arq.js')); <br>
-        }); <br>
+    <h1>📋 Códigos Usados & Práticas:</h1>
 
-        app.get('/home/input', (req,res) => { <br> 
-            res.send(`Entre no link: < a href='http://localhost:3000/home/form/:Albert/:20'>Albert/20</a>`) <br>
-        }); <br>
-        <br>
-        app.get('/home/form/:nome/:idade', (req,res) => { <br>
-            let nome = req.params.nome;<br>
-            let idade = req.params.idade;<br>
-            <br>
-            res.send(`Seu nome é: ${nome} e sua idade é: ${idade}.`);<br>
-        });<br>
-<br>
-        app.listen(3000, () => {<br>
-            console.log('na porta 3000.');<br>
-        });<br>
-<br>
-        -----------------------------------------------------------------<br>
-        <br>
-        let valor = req.params.urlValor;<br>
-        let numero = req.params.urlNumero;<br>
-        let idade = req.params.urlIdade;<br>
-        let nomeCompleto = req.params.urlNomeCompleto;<br>
-<br>
-        let medida = req.params.urlMedida;<br>
-        let altura= req.params.urlAltura;<br>
-        let largura = req.params.urlLargura;<br>
-<br>
-        -----------------------------------------------------------------<br>
+    <!-- BASTA COPIAR E COLAR SEU CÓDIGO AQUI DENTRO, SEM NENHUM <br>! -->
+    <pre><code>
+const exoress = require('express');
+const app = express();
 
-</code> <br/>
-    <a href="http://localhost:3000/home"> Voltar</a>
+app.get('/', (req, res) => res.send('Tela Inicial'));
+app.get('/home', (req, res) => res.send('Tela Home'));
+app.get('/sobrenos', (req, res) => res.send('Tela Sobre Nós'));
+
+app.listen(3000, () => console.log('Rodando na porta 3000.'));
+
+-----------------------------------------------------------------
+
+const express = require('express');
+const app = express();
+
+const path = require('path');
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + './arq.js')));
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname + './arq.js'));
+});
+
+app.get('/home/input', (req,res) => {
+    res.send(`Entre no link: < a href='http://localhost:3000/home/form/:Albert/:20'>Albert/20< /a>`)
+});
+
+app.get('/home/form/:nome/:idade', (req,res) => {
+    let nome = req.params.nome;
+    let idade = req.params.idade;
+    
+    res.send(`Seu nome é: ${nome} e sua idade é: ${idade}.`);
+});
+
+app.listen(3000, () => {
+    console.log('na porta 3000.');
+});
+
+-----------------------------------------------------------------
+let valor = req.params.urlValor;
+let numero = req.params.urlNumero;
+let idade = req.params.urlIdade;
+let nomeCompleto = req.params.urlNomeCompleto;
+
+let medida = req.params.urlMedida;
+let altura= req.params.urlAltura;
+let largura = req.params.urlLargura;
+
+-----------------------------------------------------------------
+
+
+    </code></pre>
+
+    <br />
+    <a href="http://localhost:3000/home">← Voltar para Home</a>
 </body>
 
 </html>
